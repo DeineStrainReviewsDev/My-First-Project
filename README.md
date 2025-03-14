@@ -1,28 +1,28 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/fa5414aff52b44d9a6f5d2f0237de7ee)](https://app.codacy.com/gh/DeineStrainReviewsDev/My-First-Project/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
-🔗 **Live-Demo:** [Hier ansehen 🚀](https://deinestrainreviewsdev.github.io/My-First-Project/)
+🔗 **Live Demo:** [View Here 🚀](https://deinestrainreviewsdev.github.io/My-First-Project/)
 
 # Responsive Layout Demo
 
-Eine moderne, responsive Webseite-Demo mit CSS Grid, Flexbox und animierten Komponenten..
+A modern, responsive website demo using CSS Grid, Flexbox, and animated components.
 
 ## 🚀 Features
 
-- 🎨 Modernes, minimalistisches Design
-- 📱 Vollständig responsives Layout (Mobile, Tablet, Desktop)
-- 🎭 Smooth Hover-Effekte und Animationen
-- 🏗️ CSS Grid und Flexbox Layout
-- 🎯 Optimierte Performance
-- ♿ Barrierefreie Komponenten.
+- 🎨 Modern, minimalist design
+- 📱 Fully responsive layout (Mobile, Tablet, Desktop)
+- 🎭 Smooth hover effects and animations
+- 🏗️ CSS Grid and Flexbox layout
+- 🎯 Optimized performance
+- ♿ Accessible components
 
-## 🛠️ Technologien
+## 🛠️ Technologies
 
 - `HTML5`
 - `CSS3` (Custom Properties, Grid, Flexbox)
-- Moderne CSS-Animationen
-- Mobile-First-Ansatz
+- Modern CSS animations
+- Mobile-first approach
 
-## 📂 Projektstruktur
+## 📂 Project Structure
 
 ```
 responsive-layout-demo/
@@ -35,51 +35,51 @@ responsive-layout-demo/
 
 ## 🔧 Setup
 
-**1\. Repository klonen:**
+**1\. Clone the repository:**
 
 ```bash
 git clone https://github.com/[username]/responsive-layout-demo.git
 ```
 
-**2\. Projekt-Ordner öffnen:**
+**2\. Open the project folder:**
 
 ```bash
 cd responsive-layout-demo
 ```
 
-**3\. Projekt starten:**
+**3\. Start the project:**
 
-- Öffne `index.html` direkt im Browser
+- Open `index.html` directly in the browser
 
-  **oder**
+  **or**
 
-- Starte es mit einem Live-Server (z.B. [VS Code Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer))
+- Start it with a live server (e.g. [VS Code Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer))
 
 ## 📐 Responsive Breakpoints
 
-| Gerät   | Bildschirmbreite |
-| ------- | ---------------- |
-| Mobile  | `< 768px`        |
-| Tablet  | `768px - 1199px` |
-| Desktop | `≥ 1200px`       |
+| Device  | Screen Width       |
+| ------- | ------------------ |
+| Mobile  | `< 768px`          |
+| Tablet  | `768px - 1199px`   |
+| Desktop | `≥ 1200px`         |
 
-## 🌐 Browser-Unterstützung
+## 🌐 Browser Support
 
-| Browser | Unterstützte Version |
-| ------- | -------------------- |
-| Chrome  | neueste Version      |
-| Firefox | neueste Version      |
-| Safari  | neueste Version      |
-| Edge    | neueste Version      |
+| Browser  | Supported Version |
+| -------- | ---------------- |
+| Chrome   | Latest version   |
+| Firefox  | Latest version   |
+| Safari   | Latest version   |
+| Edge     | Latest version   |
 
-## 📜 Lizenz
+## 📜 License
 
-Dieses Projekt steht unter der [MIT Lizenz](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
-## ✍️ Autor
+## ✍️ Author
 
 [**DeineStrainReviews**](https://github.com/DeineStrainReviews)
 
 ---
 
-🌟 **Star uns auf GitHub, wenn dir das Projekt gefällt!** 🌟
+🌟 **Star us on GitHub if you like this project!** 🌟
