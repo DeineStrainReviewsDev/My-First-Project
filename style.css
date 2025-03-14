@@ -35,7 +35,7 @@
 
 .hero-content {
   max-width: 600px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgb(0 0 0 / 60%);
   padding: 20px;
   border-radius: 10px;
   box-shadow: var(--shadow);
