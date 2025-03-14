@@ -1,11 +1,11 @@
-/* Reset Styles */
+/* Grundlegende Reset-Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Global Variables */
+/* Variablen für konsistente Farben und Abstände */
 :root {
   --primary-color: #4a6cf7;
   --secondary-color: #2c3e50;
@@ -18,7 +18,7 @@
   --transition: all 0.3s ease;
 }
 
-/* Base Styles */
+/* Basis-Styles */
 body {
   font-family: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--light-bg);
@@ -26,13 +26,14 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
 }
 
-/* Navigation */
-.navbar {
+/* Navigation Styles */
+.navigation {
   background-color: var(--white);
   padding: 15px;
   border-radius: var(--border-radius);
@@ -41,10 +42,10 @@ body {
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
-  width: 100%;
 }
 
-.navbar button {
+.navigation button {
+  background-color: var(--primary-color);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -54,77 +55,70 @@ body {
   font-weight: 500;
 }
 
-.btn-primary {
-  background-color: var(--primary-color);
-}
-
-.btn-secondary {
-  background-color: var(--secondary-color);
-}
-
-.btn-accent {
-  background-color: var(--accent-color);
-}
-
-.navbar button:hover {
+.navigation button:hover {
   background-color: var(--secondary-color);
   transform: translateY(-3px);
 }
 
-/* Container Layout */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
-  justify-content: center;
+.navigation .test1 {
+  background-color: var(--primary-color);
 }
 
-/* Box Styles */
-.box {
+.navigation .test2 {
+  background-color: var(--secondary-color);
+}
+
+.navigation .test3 {
+  background-color: var(--accent-color);
+}
+
+/* Container Styles */
+.container-left,
+.container-right {
   background-color: var(--white);
   padding: 25px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   transition: var(--transition);
-  flex: 1;
-  min-width: 250px; /* Ensures small boxes on mobile */
-  max-width: 600px; /* Prevents excessive stretching */
+  height: fit-content;
 }
 
-.box:hover {
+.container-left:hover,
+.container-right:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgb(0 0 0 / 15%);
 }
 
-.box-left {
+.container-left {
   border-left: 5px solid var(--primary-color);
 }
 
-.box-right {
+.container-right {
   border-right: 5px solid var(--accent-color);
 }
 
-/* Image Container */
-.box-image {
+/* Bild-Container Styles */
+.container-left-image,
+.container-right-image {
   margin-top: 20px;
   overflow: hidden;
   border-radius: var(--border-radius);
 }
 
-.box-image img {
+.container-left-image img,
+.container-right-image img {
   width: 100%;
   height: auto;
   display: block;
   transition: var(--transition);
 }
 
-.box-image img:hover {
+.container-left-image img:hover,
+.container-right-image img:hover {
   transform: scale(1.03);
 }
 
-/* Typography */
+/* Typografie */
 h1 {
   color: var(--secondary-color);
   margin-bottom: 15px;
@@ -138,29 +132,47 @@ p {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: row;
-    justify-content: space-evenly;
+@media (width >= 768px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
   }
 
-  .box {
-    flex: 1;
-    min-width: 45%; /* Ensures boxes fit side by side */
+  .navigation {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+
+  .container-left {
+    grid-column: 1 / 2;
+    align-self: start;
+  }
+
+  .container-right {
+    grid-column: 2 / 3;
+    align-self: start;
+  }
+
+  .container-left-image,
+  .container-right-image {
+    margin-top: 25px;
   }
 }
 
 /* Large Screens */
-@media (min-width: 1200px) {
+@media (width >= 1200px) {
   body {
     padding: 30px 50px;
+    gap: 30px;
   }
 
-  .navbar {
+  .navigation {
     padding: 20px;
   }
 
-  .box {
+  .container-left,
+  .container-right {
     padding: 35px;
   }
 
@@ -171,35 +183,53 @@ p {
   p {
     font-size: 1.1rem;
   }
+
+  .container-left-image,
+  .container-right-image {
+    margin-top: 30px;
+  }
+}
+
+/* Responsive Design */
+@media (width <= 768px) {
+  .container {
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
 }
 
 /* Small Screens (Phones) */
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .container {
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
   }
 
-  .box {
-    min-width: 50%;
+  body {
+    padding: 15px;
+    gap: 15px;
   }
 
-  .navbar {
+  .navigation {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .navbar button {
+  .navigation button {
     width: 100%;
   }
 
   h1 {
     font-size: 1.5rem;
   }
+
+  .container-left-image,
+  .container-right-image {
+    margin-top: 15px;
+  }
 }
 
-/* Animations */
+/* Animationen */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -212,14 +242,22 @@ p {
   }
 }
 
-.navbar {
+.navigation {
   animation: fade-in 0.6s ease-out forwards;
 }
 
-.box {
+.container-left {
   animation: fade-in 0.8s ease-out forwards;
 }
 
-.box-image {
+.container-right {
   animation: fade-in 1s ease-out forwards;
+}
+
+.container-left-image {
+  animation: fade-in 1.2s ease-out forwards;
+}
+
+.container-right-image {
+  animation: fade-in 1.4s ease-out forwards;
 }
