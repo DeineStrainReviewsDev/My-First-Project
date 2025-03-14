@@ -1,13 +1,11 @@
-/* Grundlegende Reset-Styles */
-
+/* Reset Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Variablen für konsistente Farben und Abstände */
-
+/* Global Variables */
 :root {
   --primary-color: #4a6cf7;
   --secondary-color: #2c3e50;
@@ -20,8 +18,7 @@
   --transition: all 0.3s ease;
 }
 
-/* Basis-Styles */
-
+/* Base Styles */
 body {
   font-family: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--light-bg);
@@ -29,15 +26,13 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   padding: 20px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Navigation Styles */
-
-.navigation {
+/* Navigation */
+.navbar {
   background-color: var(--white);
   padding: 15px;
   border-radius: var(--border-radius);
@@ -46,10 +41,10 @@ body {
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
-.navigation button {
-  background-color: var(--primary-color);
+.navbar button {
   color: white;
   border: none;
   padding: 10px 20px;
@@ -59,73 +54,77 @@ body {
   font-weight: 500;
 }
 
-.navigation button:hover {
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+}
+
+.btn-accent {
+  background-color: var(--accent-color);
+}
+
+.navbar button:hover {
   background-color: var(--secondary-color);
   transform: translateY(-3px);
 }
 
-.navigation .test1 {
-  background-color: var(--primary-color);
+/* Container Layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
 }
 
-.navigation .test2 {
-  background-color: var(--secondary-color);
-}
-
-.navigation .test3 {
-  background-color: var(--accent-color);
-}
-
-/* Container Styles */
-
-.container-left,
-.container-right {
+/* Box Styles */
+.box {
   background-color: var(--white);
   padding: 25px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   transition: var(--transition);
-  height: fit-content;
+  flex: 1;
+  min-width: 250px; /* Ensures small boxes on mobile */
+  max-width: 600px; /* Prevents excessive stretching */
 }
 
-.container-left:hover,
-.container-right:hover {
+.box:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgb(0 0 0 / 15%);
 }
 
-.container-left {
+.box-left {
   border-left: 5px solid var(--primary-color);
 }
 
-.container-right {
+.box-right {
   border-right: 5px solid var(--accent-color);
 }
 
-/* Bild-Container Styles */
-
-.container-left-image,
-.container-right-image {
+/* Image Container */
+.box-image {
   margin-top: 20px;
   overflow: hidden;
   border-radius: var(--border-radius);
 }
 
-.container-left-image img,
-.container-right-image img {
+.box-image img {
   width: 100%;
   height: auto;
   display: block;
   transition: var(--transition);
 }
 
-.container-left-image img:hover,
-.container-right-image img:hover {
+.box-image img:hover {
   transform: scale(1.03);
 }
 
-/* Typografie */
-
+/* Typography */
 h1 {
   color: var(--secondary-color);
   margin-bottom: 15px;
@@ -139,47 +138,29 @@ p {
 }
 
 /* Responsive Design */
-@media (width >= 768px) {
-  body {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    align-items: start;
+@media (max-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 
-  .navigation {
-    grid-column: 1 / -1;
-    justify-content: flex-start;
-  }
-
-  .container-left {
-    grid-column: 1 / 2;
-    align-self: start;
-  }
-
-  .container-right {
-    grid-column: 2 / 3;
-    align-self: start;
-  }
-
-  .container-left-image,
-  .container-right-image {
-    margin-top: 25px;
+  .box {
+    flex: 1;
+    min-width: 45%; /* Ensures boxes fit side by side */
   }
 }
 
-/* Für größere Bildschirme */
-@media (width >= 1200px) {
+/* Large Screens */
+@media (min-width: 1200px) {
   body {
     padding: 30px 50px;
-    gap: 30px;
   }
 
-  .navigation {
+  .navbar {
     padding: 20px;
   }
 
-  .container-left,
-  .container-right {
+  .box {
     padding: 35px;
   }
 
@@ -190,40 +171,35 @@ p {
   p {
     font-size: 1.1rem;
   }
-
-  .container-left-image,
-  .container-right-image {
-    margin-top: 30px;
-  }
 }
 
-/* Für kleinere Bildschirme/Mobilgeräte */
-@media (width <= 480px) {
-  body {
-    padding: 15px;
-    gap: 15px;
+/* Small Screens (Phones) */
+@media (max-width: 480px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
 
-  .navigation {
+  .box {
+    min-width: 50%;
+  }
+
+  .navbar {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .navigation button {
+  .navbar button {
     width: 100%;
   }
 
   h1 {
     font-size: 1.5rem;
   }
-
-  .container-left-image,
-  .container-right-image {
-    margin-top: 15px;
-  }
 }
 
-/* Animationen */
+/* Animations */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -236,22 +212,14 @@ p {
   }
 }
 
-.navigation {
+.navbar {
   animation: fade-in 0.6s ease-out forwards;
 }
 
-.container-left {
+.box {
   animation: fade-in 0.8s ease-out forwards;
 }
 
-.container-right {
+.box-image {
   animation: fade-in 1s ease-out forwards;
-}
-
-.container-left-image {
-  animation: fade-in 1.2s ease-out forwards;
-}
-
-.container-right-image {
-  animation: fade-in 1.4s ease-out forwards;
 }
