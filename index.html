@@ -3,18 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Test Page</title>
+    <title>My Project</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Welcome to My Project</h1>
+        <p>Experience a smooth parallax effect with pure CSS</p>
+        <a href="#explore" class="btn">Explore More</a>
+      </div>
+    </div>
+
+    <!-- Navigation -->
     <div class="navbar">
       <button class="btn-primary">Test1</button>
       <button class="btn-secondary">Test2</button>
       <button class="btn-accent">Test3</button>
     </div>
+
+    <!-- Main Content -->
     <div class="container">
       <div class="box box-left">
-        <h1>Left Container</h1>
+        <h2>Left Container</h2>
         <p>This is the left container</p>
         <div class="box-image">
           <img
@@ -24,7 +36,7 @@
         </div>
       </div>
       <div class="box box-right">
-        <h1>Right Container</h1>
+        <h2>Right Container</h2>
         <p>This is the right container</p>
         <div class="box-image">
           <img
@@ -34,5 +46,14 @@
         </div>
       </div>
     </div>
+
+    <!-- Explore Section -->
+    <section id="explore" class="content">
+      <h2>Discover More</h2>
+      <p>
+        This section contains more content to demonstrate the scrolling effect. 
+        Keep scrolling to experience the parallax effect in action.
+      </p>
+    </section>
   </body>
 </html>
