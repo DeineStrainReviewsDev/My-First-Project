@@ -1,11 +1,11 @@
-/* Grundlegende Reset-Styles */
+/* Basic Reset Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Variablen für konsistente Farben und Abstände */
+/* Variables for Consistent Colors and Spacing */
 :root {
   --primary-color: #4a6cf7;
   --secondary-color: #2c3e50;
@@ -18,7 +18,7 @@
   --transition: all 0.3s ease;
 }
 
-/* Basis-Styles */
+/* Base Styles */
 body {
   font-family: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--light-bg);
@@ -32,8 +32,8 @@ body {
   gap: 20px;
 }
 
-/* Navigation Styles */
-.navigation {
+/* Navbar Styles */
+.navbar {
   background-color: var(--white);
   padding: 15px;
   border-radius: var(--border-radius);
@@ -44,8 +44,7 @@ body {
   flex-wrap: wrap;
 }
 
-.navigation button {
-  background-color: var(--primary-color);
+.navbar button {
   color: white;
   border: none;
   padding: 10px 20px;
@@ -55,70 +54,74 @@ body {
   font-weight: 500;
 }
 
-.navigation button:hover {
+.navbar button:hover {
   background-color: var(--secondary-color);
   transform: translateY(-3px);
 }
 
-.navigation .test1 {
+.btn-primary {
   background-color: var(--primary-color);
 }
 
-.navigation .test2 {
+.btn-secondary {
   background-color: var(--secondary-color);
 }
 
-.navigation .test3 {
+.btn-accent {
   background-color: var(--accent-color);
 }
 
 /* Container Styles */
-.container-left,
-.container-right {
+.container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.box {
   background-color: var(--white);
   padding: 25px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   transition: var(--transition);
-  height: fit-content;
+  flex: 1 1 300px; /* Makes sure boxes scale properly */
+  max-width: 500px;
 }
 
-.container-left:hover,
-.container-right:hover {
+.box:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgb(0 0 0 / 15%);
 }
 
-.container-left {
+.box-left {
   border-left: 5px solid var(--primary-color);
 }
 
-.container-right {
+.box-right {
   border-right: 5px solid var(--accent-color);
 }
 
-/* Bild-Container Styles */
-.container-left-image,
-.container-right-image {
+/* Image Container Styles */
+.box-image {
   margin-top: 20px;
   overflow: hidden;
   border-radius: var(--border-radius);
 }
 
-.container-left-image img,
-.container-right-image img {
+.box-image img {
   width: 100%;
   height: auto;
   display: block;
   transition: var(--transition);
 }
 
-.container-left-image img:hover,
-.container-right-image img:hover {
+.box-image img:hover {
   transform: scale(1.03);
 }
 
-/* Typografie */
+/* Typography */
 h1 {
   color: var(--secondary-color);
   margin-bottom: 15px;
@@ -133,30 +136,9 @@ p {
 
 /* Responsive Design */
 @media (width >= 768px) {
-  body {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    align-items: start;
-  }
-
-  .navigation {
-    grid-column: 1 / -1;
-    justify-content: flex-start;
-  }
-
-  .container-left {
-    grid-column: 1 / 2;
-    align-self: start;
-  }
-
-  .container-right {
-    grid-column: 2 / 3;
-    align-self: start;
-  }
-
-  .container-left-image,
-  .container-right-image {
-    margin-top: 25px;
+  .container {
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
@@ -167,12 +149,11 @@ p {
     gap: 30px;
   }
 
-  .navigation {
+  .navbar {
     padding: 20px;
   }
 
-  .container-left,
-  .container-right {
+  .box {
     padding: 35px;
   }
 
@@ -184,24 +165,15 @@ p {
     font-size: 1.1rem;
   }
 
-  .container-left-image,
-  .container-right-image {
+  .box-image {
     margin-top: 30px;
-  }
-}
-
-/* Responsive Design */
-@media (width <= 768px) {
-  .container {
-    flex-flow: row nowrap;
-    justify-content: center;
   }
 }
 
 /* Small Screens (Phones) */
 @media (width <= 480px) {
   .container {
-    flex-flow: row nowrap;
+    flex-direction: row;
     justify-content: center;
   }
 
@@ -210,12 +182,12 @@ p {
     gap: 15px;
   }
 
-  .navigation {
+  .navbar {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .navigation button {
+  .navbar button {
     width: 100%;
   }
 
@@ -223,13 +195,12 @@ p {
     font-size: 1.5rem;
   }
 
-  .container-left-image,
-  .container-right-image {
+  .box-image {
     margin-top: 15px;
   }
 }
 
-/* Animationen */
+/* Animations */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -242,22 +213,18 @@ p {
   }
 }
 
-.navigation {
+.navbar {
   animation: fade-in 0.6s ease-out forwards;
 }
 
-.container-left {
+.box-left {
   animation: fade-in 0.8s ease-out forwards;
 }
 
-.container-right {
+.box-right {
   animation: fade-in 1s ease-out forwards;
 }
 
-.container-left-image {
+.box-image {
   animation: fade-in 1.2s ease-out forwards;
-}
-
-.container-right-image {
-  animation: fade-in 1.4s ease-out forwards;
 }
