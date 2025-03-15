@@ -1,7 +1,7 @@
 /* eslint-disable n/no-unsupported-features/node-builtins */
 
-if (window && window.document) {
-  document.addEventListener("DOMContentLoaded", function () {
+if (typeof window !== "undefined") {
+  window.addEventListener("DOMContentLoaded", function () {
     var toggleButton = document.getElementById("mode-toggle-btn");
     var body = document.body;
 
