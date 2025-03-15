@@ -18,13 +18,13 @@ html {
   --text-color: #2e3d2e; /* Dark green for readable text */
   --light-bg: #eaf5ea; /* Very light green for soft contrast */
   --white: #f8f8f8; /* Soft white for readability */
-  --box-bg-light: #ffffff; /* Light background for boxes */
+  --box-bg-light: #fff; /* Light background for boxes */
   --shadow: 0 5px 15px rgb(0 0 0 / 15%); /* Soft shadow for depth effect */
   --border-radius: 8px; /* Rounded corners for a modern look */
   --transition: all 0.3s ease; /* Smooth transitions for hover effects */
   --toggle-btn-bg-light: #ffeb3b; /* Background color for light mode toggle button (sun) */
   --toggle-btn-bg-dark: #37474f; /* Background color for dark mode toggle button (moon) */
-  --toggle-icon-light: #ffffff; /* Icon color for light mode toggle button (sun) */
+  --toggle-icon-light: #fff; /* Icon color for light mode toggle button (sun) */
   --toggle-icon-dark: #ffeb3b; /* Icon color for dark mode toggle button (moon) */
 }
 
@@ -40,7 +40,7 @@ body.dark-mode {
   --shadow: 0 5px 15px rgb(0 0 0 / 50%); /* Darker shadow for depth effect */
   --toggle-btn-bg-light: #ffeb3b; /* Background color for light mode toggle button (sun) */
   --toggle-btn-bg-dark: #37474f; /* Background color for dark mode toggle button (moon) */
-  --toggle-icon-light: #ffffff; /* Icon color for light mode toggle button (sun) */
+  --toggle-icon-light: #fff; /* Icon color for light mode toggle button (sun) */
   --toggle-icon-dark: #ffeb3b; /* Icon color for dark mode toggle button (moon) */
 }
 
