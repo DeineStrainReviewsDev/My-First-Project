@@ -1,39 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Character encoding set to UTF-8 for proper text rendering -->
     <meta charset="UTF-8" />
-    <!-- Ensures proper scaling and responsiveness on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Favicon for the website -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <!-- Title of the webpage -->
     <title>My Project</title>
-    <!-- Linking the external CSS file for styling -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Hero Section: Fullscreen banner with introduction -->
+    <div class="mode-toggle">
+      <!-- Container for the mode toggle button -->
+      <button id="mode-toggle-btn" class="toggle-btn">
+        <!-- Mode toggle button -->
+        <svg
+          class="mode-icon light-mode-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg
+          class="mode-icon dark-mode-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+
     <div class="hero">
       <div class="hero-content">
         <h1>Welcome to My Project</h1>
         <p>Experience a smooth parallax effect with JavaScript scrolling</p>
-        <!-- Button that smoothly scrolls down to the "Explore" section -->
         <a href="#explore" class="btn scroll-link">Explore More</a>
       </div>
     </div>
 
-    <!-- Navigation Bar -->
     <div class="navbar">
-      <!-- Sample buttons for navigation or actions -->
       <button class="btn-primary">Test1</button>
       <button class="btn-secondary">Test2</button>
       <button class="btn-accent">Test3</button>
     </div>
 
-    <!-- Main Content Section -->
     <div class="container">
-      <!-- Left Box: Contains a title, text, and an image -->
       <div class="box box-left">
         <h2>Left Container</h2>
         <p>This is the left container</p>
@@ -44,7 +72,6 @@
           />
         </div>
       </div>
-      <!-- Right Box: Contains a title, text, and an image -->
       <div class="box box-right">
         <h2>Right Container</h2>
         <p>This is the right container</p>
@@ -57,7 +84,6 @@
       </div>
     </div>
 
-    <!-- Explore Section: Additional content to demonstrate scrolling effect -->
     <section id="explore" class="content">
       <h2>Discover More</h2>
       <p>
@@ -66,8 +92,6 @@
       </p>
     </section>
 
-    <!-- Scroll-To-Top Button -->
-    <!-- Appears after scrolling and smoothly scrolls back to the top -->
     <button id="scroll-to-top-btn" class="scroll-to-top">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -80,13 +104,10 @@
         stroke-linecap="round"
         stroke-linejoin="round"
       >
-        <!-- Upward pointing arrow icon -->
         <polyline points="18 15 12 9 6 15" />
       </svg>
     </button>
 
-    <!-- Scroll-To-Bottom Button -->
-    <!-- Always visible (except at the bottom) and smoothly scrolls down -->
     <button id="scroll-to-bottom-btn" class="scroll-to-bottom">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -99,12 +120,12 @@
         stroke-linecap="round"
         stroke-linejoin="round"
       >
-        <!-- Downward pointing arrow icon -->
         <polyline points="6 9 12 15 18 9" />
       </svg>
     </button>
 
-    <!-- Linking external JavaScript file for smooth scrolling functionality -->
     <script src="scroll-functions.js"></script>
+    <script src="mode-switcher.js"></script>
+    <!-- Linking JavaScript for Light/Dark Mode functionality -->
   </body>
 </html>
