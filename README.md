@@ -75,6 +75,8 @@ cd My-First-Project
 
 Distributed under the [MIT License](LICENSE).
 
+© 2025 [DeineStrainReviewsDev](https://github.com/DeineStrainReviewsDev)
+
 ## ✍️ Author
 
 **[DeineStrainReviewsDev](https://github.com/DeineStrainReviewsDev)**
