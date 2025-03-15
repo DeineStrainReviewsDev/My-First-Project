@@ -1,24 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Added event listener to ensure DOM is fully loaded before executing script
-  const toggleButton = document.getElementById("mode-toggle-btn"); // Selected the mode toggle button element
-  const body = document.body; // Selected the body element for class manipulation
+if (typeof document !== "undefined") {
+  // Guard access to document
+  document.addEventListener("DOMContentLoaded", function () {
+    var toggleButton = document.getElementById("mode-toggle-btn"); // Use var instead of const for block-scoped variables
+    var body = document.body; // Use var instead of const for block-scoped variables
 
-  // Check if dark mode is enabled in local storage
-  if (localStorage.getItem("darkMode") === "enabled") {
-    // Checked local storage for dark mode preference
-    body.classList.add("dark-mode"); // Applied dark mode class if preference is enabled
-  }
-
-  toggleButton.addEventListener("click", function () {
-    // Added click event listener to the toggle button
-    body.classList.toggle("dark-mode"); // Toggled dark mode class on body element
-
-    // Save the preference to local storage
-    if (body.classList.contains("dark-mode")) {
-      // Checked if dark mode is currently enabled
-      localStorage.setItem("darkMode", "enabled"); // Saved dark mode preference as enabled in local storage
-    } else {
-      localStorage.setItem("darkMode", "disabled"); // Saved dark mode preference as disabled in local storage
+    // Check if dark mode is enabled in local storage
+    if (
+      typeof localStorage !== "undefined" &&
+      localStorage.getItem("darkMode") === "enabled"
+    ) {
+      // Guard access to localStorage
+      body.classList.add("dark-mode"); // Applied dark mode class if preference is enabled
     }
+
+    toggleButton.addEventListener("click", function () {
+      body.classList.toggle("dark-mode"); // Toggled dark mode class on body element
+
+      // Save the preference to local storage
+      if (body.classList.contains("dark-mode")) {
+        // Checked if dark mode is currently enabled
+        if (typeof localStorage !== "undefined") {
+          // Guard access to localStorage
+          localStorage.setItem("darkMode", "enabled"); // Saved dark mode preference as enabled in local storage
+        }
+      } else {
+        if (typeof localStorage !== "undefined") {
+          // Guard access to localStorage
+          localStorage.setItem("darkMode", "disabled"); // Saved dark mode preference as disabled in local storage
+        }
+      }
+    });
   });
-});
+}
