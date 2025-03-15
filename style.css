@@ -1,326 +1,494 @@
-/* Basic Reset Styles */
+/* 
+==================================
+  Basic Reset Styles
+==================================
+*/
+
+/* Remove default margins and paddings from all elements */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Use border-box model to include padding and border in element size */
 }
 
-/* Smooth Scroll */
+/* 
+==================================
+  Smooth Scrolling
+==================================
+*/
+
+/* Enables smooth scrolling behavior across the page */
 html {
   scroll-behavior: smooth;
 }
 
-/* Variables for Consistent Colors and Spacing */
+/* 
+==================================
+  Variables for Colors and Spacing
+==================================
+*/
+
+/* Define reusable CSS variables for colors, spacing, and other design elements */
 :root {
-  --primary-color: #4a6cf7;
-  --secondary-color: #2c3e50;
-  --accent-color: #ff6b6b;
-  --text-color: #333;
-  --light-bg: #f8f9fa;
-  --white: #fff;
-  --shadow: 0 5px 15px rgb(0 0 0 / 10%);
-  --border-radius: 8px;
-  --transition: all 0.3s ease;
+  --primary-color: #354d35; /* Deep forest green for primary elements (buttons, highlights) */
+  --secondary-color: #6da96d; /* Darker forest green for contrast */
+  --accent-color: #d99152; /* Warm earthy tone for highlights */
+  --text-color: #2e3d2e; /* Dark green for readable text */
+  --light-bg: #eaf5ea; /* Very light green for soft contrast */
+  --white: #f8f8f8; /* Soft white for readability */
+  --shadow: 0 5px 15px rgb(0 0 0 / 15%); /* Soft shadow for depth effect */
+  --border-radius: 8px; /* Rounded corners for a modern look */
+  --transition: all 0.3s ease; /* Smooth transitions for hover effects */
 }
 
-/* Parallax Hero Section */
+/* 
+==================================
+  Parallax Hero Section
+==================================
+*/
+
+/* Full-screen hero section with parallax background */
 .hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-image: url("img/parallax-bg.webp");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  color: white;
-  padding: 20px;
+  height: 100vh; /* Makes the section take up the full viewport height */
+  display: flex; /* Enables flexbox for centering content */
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  text-align: center; /* Ensures text is centered */
+  background-image: url("img/parallax-bg.webp"); /* Background image */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-attachment: fixed; /* Enables parallax scrolling effect */
+  background-position: center; /* Centers the background image */
+  color: white; /* Default text color */
+  padding: 20px; /* Adds space around the content */
 }
 
+/* Hero content wrapper with a semi-transparent background */
 .hero-content {
-  max-width: 600px;
-  background: rgb(0 0 0 / 60%);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
+  max-width: 600px; /* Restricts content width for readability */
+  background: rgb(60 85 60 / 75%); /* Soft earthy green with transparency */
+  backdrop-filter: blur(8px); /* Slight blur effect for better contrast */
+  padding: 20px; /* Adds spacing inside the box */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: var(--shadow); /* Adds depth effect */
 }
 
+/* Hero section main heading */
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 2.5rem; /* Large font size */
+  margin-bottom: 10px; /* Space below the heading */
+  color: #f8f8f8; /* Light text for contrast */
 }
 
+/* Hero section paragraph text */
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: 1.2rem; /* Slightly smaller font */
+  margin-bottom: 20px; /* Space below the paragraph */
+  color: #f8f8f8; /* Light color for readability */
 }
 
+/* 
+==================================
+  Buttons
+==================================
+*/
+
+/* General button styles */
 .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: var(--primary-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: var(--transition);
+  display: inline-block; /* Allows width and height control */
+  padding: 10px 20px; /* Padding inside the button */
+  background: var(--primary-color); /* Uses primary color */
+  color: white; /* White text */
+  text-decoration: none; /* Removes underline for links */
+  border-radius: 5px; /* Slightly rounded corners */
+  transition: var(--transition); /* Enables smooth hover effect */
 }
 
+/* Hover effect for buttons */
 .btn:hover {
-  background: var(--secondary-color);
-  transform: translateY(-3px);
+  background: var(--secondary-color); /* Change color on hover */
+  transform: translateY(-3px); /* Moves button slightly upwards */
 }
 
-/* Navbar Styles */
+/* 
+==================================
+  Navigation Bar
+==================================
+*/
+
+/* Navigation bar styles */
 .navbar {
-  background-color: var(--white);
-  padding: 15px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
+  background-color: var(--white); /* White background */
+  padding: 15px; /* Space inside navbar */
+  border-radius: var(--border-radius); /* Rounded corners */
+  box-shadow: var(--shadow); /* Adds shadow effect */
+  display: flex; /* Uses flexbox */
+  justify-content: center; /* Centers navigation buttons */
+  gap: 15px; /* Space between buttons */
+  flex-wrap: wrap; /* Allows wrapping for responsiveness */
 }
 
+/* General styles for navigation buttons */
 .navbar button {
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: var(--transition);
-  font-weight: 500;
+  color: white; /* White text */
+  border: none; /* Removes border */
+  padding: 10px 20px; /* Adds space inside the button */
+  border-radius: var(--border-radius); /* Rounded corners */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: var(--transition); /* Enables smooth transition effects */
+  font-weight: 500; /* Slightly bold text */
 }
 
+/* Changes background color and slightly lifts the button when hovered */
 .navbar button:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-3px);
+  background-color: var(--secondary-color); /* Darker green on hover */
+  transform: translateY(
+    -3px
+  ); /* Moves the button up slightly for a 3D effect */
 }
 
+/* 
+==================================
+  Button Color Variants
+==================================
+*/
+
+/* Primary button color */
 .btn-primary {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color); /* Main forest green */
 }
 
+/* Secondary button color */
 .btn-secondary {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color); /* Darker green variant */
 }
 
+/* Accent button color */
 .btn-accent {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color); /* Warm earthy accent */
 }
 
-/* Container Styles */
+/* 
+==================================
+  Main Content Container
+==================================
+*/
+
+/* Defines a flexible content container */
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex; /* Enables flexbox for layout */
+  flex-wrap: wrap; /* Allows wrapping to fit smaller screens */
+  justify-content: center; /* Centers content horizontally */
+  gap: 20px; /* Adds spacing between child elements */
+  padding: 20px; /* Adds padding around the container */
+  max-width: 1200px; /* Limits the maximum width */
+  margin: 0 auto; /* Centers the container horizontally */
 }
 
-/* Box Styles */
+/* 
+==================================
+  Box Styles
+==================================
+*/
+
+/* Styles for individual content boxes */
 .box {
-  background-color: var(--white);
-  padding: 25px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  flex: 1 1 300px;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  background-color: var(--white); /* White background for contrast */
+  padding: 25px; /* Adds padding inside the box */
+  border-radius: var(--border-radius); /* Rounded corners */
+  box-shadow: var(--shadow); /* Adds a soft shadow for depth */
+  transition: var(--transition); /* Enables smooth hover effects */
+  flex: 1 1 300px; /* Flexible sizing: Minimum 300px width, auto adjust */
+  max-width: 500px; /* Maximum width limit */
+  display: flex; /* Enables flexbox */
+  flex-direction: column; /* Aligns content vertically */
+  align-items: center; /* Centers content horizontally */
+  text-align: center; /* Centers text */
 }
 
+/* Hover effect for boxes */
 .box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgb(0 0 0 / 15%);
+  transform: translateY(-5px); /* Moves the box slightly upward */
+  box-shadow: 0 10px 25px rgb(0 0 0 / 15%); /* Increases shadow for depth */
 }
 
+/* Left box border styling */
 .box-left {
-  border-left: 5px solid var(--primary-color);
+  border-left: 5px solid var(--secondary-color); /* Green left border */
 }
 
+/* Right box border styling */
 .box-right {
-  border-right: 5px solid var(--accent-color);
+  border-right: 5px solid var(--accent-color); /* Accent-colored right border */
 }
 
-/* Image Styles */
+/* 
+==================================
+  Image Styling
+==================================
+*/
+
+/* Wrapper for images inside boxes */
 .box-image {
-  margin-top: 20px;
-  overflow: hidden;
-  border-radius: var(--border-radius);
-  width: 100%;
-  max-width: 100%;
+  margin-top: 20px; /* Adds space above the image */
+  overflow: hidden; /* Prevents overflowing content */
+  border-radius: var(--border-radius); /* Rounded edges */
+  width: 100%; /* Full width inside its container */
+  max-width: 100%; /* Prevents stretching */
 }
 
+/* Ensures images are responsive */
 .box-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: var(--transition);
+  width: 100%; /* Image fills the available space */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Removes unwanted space below images */
+  transition: var(--transition); /* Enables smooth hover effects */
 }
 
+/* Image hover effect */
 .box-image img:hover {
-  transform: scale(1.03);
+  transform: scale(1.03); /* Slight zoom effect */
 }
 
-/* Content Section */
+/* 
+==================================
+  Content Section
+==================================
+*/
+
+/* General styling for content sections */
 .content {
-  padding: 100px 20px;
-  text-align: center;
-  background: var(--light-bg);
+  padding: 100px 20px; /* Adds padding for spacing */
+  text-align: center; /* Centers text */
+  background: var(--light-bg); /* Soft green background */
 }
 
+/* Content section heading */
 .content h2 {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 15px;
+  font-size: 2rem; /* Large heading */
+  color: var(--primary-color); /* Uses main green color */
+  margin-bottom: 15px; /* Adds spacing below */
 }
 
-/* Typography */
+/* 
+==================================
+  Typography
+==================================
+*/
+
+/* Styles for main headings */
 h1,
 h2 {
-  color: var(--secondary-color);
-  margin-bottom: 15px;
-  font-size: 1.8rem;
-  font-weight: 700;
+  color: var(--secondary-color); /* Darker green for contrast */
+  margin-bottom: 15px; /* Adds spacing */
+  font-size: 1.8rem; /* Larger text */
+  font-weight: 700; /* Bold */
 }
 
+/* General paragraph text styling */
 p {
-  color: var(--text-color);
-  font-size: 1rem;
+  color: var(--text-color); /* Dark green for readability */
+  font-size: 1rem; /* Standard text size */
 }
 
-/* Responsive Design */
+/* 
+==================================
+  Responsive Design
+==================================
+*/
 
-/* TABLET / SMALLER DESKTOP SCREENS */
+/* 
+  Adjust layout for tablets and smaller desktop screens 
+  - Ensures content remains visually balanced
+*/
 @media (width <= 1024px) {
   .container {
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: row; /* Keeps row layout */
+    justify-content: center; /* Centers items */
   }
 }
 
-/* MOBILE / TABLET PORTRAIT */
+/* 
+  Adjust layout for mobile and tablet portrait mode 
+  - Switches content layout for better readability on smaller screens
+*/
 @media (width <= 768px) {
   .container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content */
   }
 
   .box {
-    max-width: 90%;
+    max-width: 90%; /* Prevents boxes from being too wide */
   }
 }
 
-/* SMALL MOBILE SCREENS */
+/* 
+==========================================
+  SMALL MOBILE SCREENS (≤ 480px width)
+==========================================
+*/
+
+/* Adjustments for very small screens */
 @media (width <= 480px) {
   .container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Stacks content vertically */
+    align-items: center; /* Centers content horizontally */
   }
 
   .box {
-    max-width: 100%;
+    max-width: 100%; /* Ensures full width usage */
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Reduces heading size for smaller screens */
   }
 
   .box-image {
-    margin-top: 15px;
+    margin-top: 15px; /* Adds spacing above images */
   }
 }
 
-/* Animations */
+/* 
+==========================================
+  FADE-IN ANIMATIONS
+==========================================
+*/
+
+/* Defines a smooth fade-in effect */
 @keyframes fade-in {
   from {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 0; /* Starts fully transparent */
+    transform: translateY(20px); /* Moves element 20px downward */
   }
-
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Becomes fully visible */
+    transform: translateY(0); /* Moves to original position */
   }
 }
 
+/* 
+  Applying fade-in effect to different elements 
+  with slight delays for a staggered appearance
+*/
 .navbar {
-  animation: fade-in 0.6s ease-out forwards;
+  animation: fade-in 0.6s ease-out forwards; /* Navbar fades in first */
 }
 
 .box-left {
-  animation: fade-in 0.8s ease-out forwards;
+  animation: fade-in 0.8s ease-out forwards; /* Left box fades in next */
 }
 
 .box-right {
-  animation: fade-in 1s ease-out forwards;
+  animation: fade-in 1s ease-out forwards; /* Right box follows */
 }
 
 .box-image {
-  animation: fade-in 1.2s ease-out forwards;
+  animation: fade-in 1.2s ease-out forwards; /* Images fade in last */
 }
 
-/* Scroll-to-Top & Scroll-to-Bottom Buttons */
+/* 
+==========================================
+  SCROLL-TO-TOP & SCROLL-TO-BOTTOM BUTTONS
+==========================================
+*/
+
+/* General styles for both scroll buttons */
 .scroll-to-top,
 .scroll-to-bottom {
-  position: fixed;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  box-shadow: var(--shadow);
-  font-size: 20px;
-  cursor: pointer;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: fixed; /* Fixes buttons in place on the screen */
+  right: 20px; /* Positions buttons towards the right side */
+  width: 55px; /* Default button width */
+  height: 55px; /* Default button height */
+  background: var(--primary-color); /* Uses primary green color */
+  color: white; /* White icon for contrast */
+  border: none; /* Removes default button border */
+  border-radius: 50%; /* Makes button circular */
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%); /* Adds a soft shadow */
+  font-size: 24px; /* Icon size */
+  cursor: pointer; /* Changes cursor to pointer */
+  display: flex; /* Enables flexbox */
+  align-items: center; /* Centers icon vertically */
+  justify-content: center; /* Centers icon horizontally */
+  transition: all 0.3s ease; /* Smooth hover effect */
+  z-index: 1000; /* Ensures buttons stay above other content */
 }
 
-/* Scroll-to-Top Button (erscheint erst nach dem ersten Scrollen) */
+/* 
+  Scroll-to-Top Button:
+  - Appears only after user scrolls down
+*/
 .scroll-to-top {
-  bottom: 80px; /* Über dem Scroll-to-Bottom Button */
-  opacity: 0;
-  visibility: hidden;
+  bottom: 80px; /* Positioned above the Scroll-to-Bottom button */
+  opacity: 0; /* Initially invisible */
+  visibility: hidden; /* Hides button completely */
 }
 
-/* Scroll-to-Bottom Button (immer sichtbar, außer am Seitenende) */
+/* 
+  Scroll-to-Bottom Button:
+  - Always visible unless the user reaches the bottom
+*/
 .scroll-to-bottom {
-  bottom: 20px;
+  bottom: 20px; /* Lower position */
+  opacity: 1; /* Always visible */
+  visibility: visible;
 }
 
-/* Hover-Effekt für beide Buttons */
+/* 
+  Hover effect for both buttons:
+  - Changes background color and adds slight movement
+*/
 .scroll-to-top:hover,
 .scroll-to-bottom:hover {
-  background: var(--secondary-color);
-  transform: translateY(-3px);
+  background: var(--secondary-color); /* Uses darker green for hover effect */
+  transform: translateY(-3px); /* Moves button slightly upward */
 }
 
-/* Mobile Anpassungen */
-@media (width <= 480px) {
+/* 
+==========================================
+  MOBILE RESPONSIVENESS (≤ 768px width)
+==========================================
+*/
+
+/* Adjusts scroll button sizes for smaller screens */
+@media (width <= 768px) {
   .scroll-to-top,
   .scroll-to-bottom {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-    right: 15px;
+    width: 50px; /* Slightly smaller buttons */
+    height: 50px; /* Adjusted height */
+    font-size: 20px; /* Reduces icon size */
+    right: 15px; /* Moves buttons slightly left */
   }
 
   .scroll-to-top {
-    bottom: 70px;
+    bottom: 75px; /* Maintains spacing above bottom button */
   }
 
   .scroll-to-bottom {
-    bottom: 15px;
+    bottom: 15px; /* Adjusts spacing */
+  }
+}
+
+/* 
+==========================================
+  FIXING CODACY WARNING (MEDIA FEATURE RANGE NOTATION)
+==========================================
+*/
+
+/* Ensures correct media feature range notation for Codacy compliance */
+@media (width <= 480px) {
+  .scroll-to-top,
+  .scroll-to-bottom {
+    width: 45px; /* Further reduces button size */
+    height: 45px;
+    font-size: 18px; /* Adjusts icon size */
+    right: 10px; /* Positions closer to the edge */
+  }
+
+  .scroll-to-top {
+    bottom: 70px; /* Adjusts spacing */
+  }
+
+  .scroll-to-bottom {
+    bottom: 10px; /* Moves bottom button slightly down */
   }
 }
