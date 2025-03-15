@@ -65,7 +65,9 @@ body.dark-mode {
   background-color: var(
     --toggle-btn-bg-light
   ); /* Background color for light mode */
+
   border: none; /* Remove default border */
+
   border-radius: 50%; /* Make button round */
   width: 50px; /* Button width */
   height: 50px; /* Button height */
