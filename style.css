@@ -285,19 +285,17 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 1;
-  visibility: visible;
 }
 
 /* Scroll-to-Top Button (erscheint erst nach dem ersten Scrollen) */
-#scroll-to-top-btn {
+.scroll-to-top {
   bottom: 80px; /* Über dem Scroll-to-Bottom Button */
   opacity: 0;
   visibility: hidden;
 }
 
 /* Scroll-to-Bottom Button (immer sichtbar, außer am Seitenende) */
-#scroll-to-bottom-btn {
+.scroll-to-bottom {
   bottom: 20px;
 }
 
@@ -318,11 +316,11 @@ p {
     right: 15px;
   }
 
-  #scroll-to-top-btn {
+  .scroll-to-top {
     bottom: 70px;
   }
 
-  #scroll-to-bottom-btn {
+  .scroll-to-bottom {
     bottom: 15px;
   }
 }
