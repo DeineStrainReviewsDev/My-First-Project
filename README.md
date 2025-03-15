@@ -36,11 +36,12 @@ My-First-Project/
 ├── scroll-functions.js      # Smooth scroll functions, scroll-to-top and bottom button visibility
 └── style.css                # Responsive styles with Grid, Flexbox, and custom animations
 
+````
 ## 🔧 Setup
 
 **1\. Clone the repository:**
 
-```bash
+````bash
 git clone https://github.com/DeineStrainReviewsDev/My-First-Project.git
 cd My-First-Project
 ````
