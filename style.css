@@ -21,10 +21,10 @@ html {
   --shadow: 0 5px 15px rgb(0 0 0 / 15%); /* Soft shadow for depth effect */
   --border-radius: 8px; /* Rounded corners for a modern look */
   --transition: all 0.3s ease; /* Smooth transitions for hover effects */
-  --switch-bg-light: #ffeb3b; /* Background color for light mode switch (sun) */
-  --switch-bg-dark: #37474f; /* Background color for dark mode switch (moon) */
-  --switch-icon-light: #ffffff; /* Icon color for light mode switch (sun) */
-  --switch-icon-dark: #ffeb3b; /* Icon color for dark mode switch (moon) */
+  --toggle-btn-bg-light: #ffeb3b; /* Background color for light mode toggle button (sun) */
+  --toggle-btn-bg-dark: #37474f; /* Background color for dark mode toggle button (moon) */
+  --toggle-icon-light: #ffffff; /* Icon color for light mode toggle button (sun) */
+  --toggle-icon-dark: #ffeb3b; /* Icon color for dark mode toggle button (moon) */
 }
 
 /* Dark Mode Variables */
@@ -36,89 +36,53 @@ body.dark-mode {
   --light-bg: #121212; /* Very dark background for soft contrast */
   --white: #2e2e2e; /* Darker background for readability */
   --shadow: 0 5px 15px rgb(0 0 0 / 50%); /* Darker shadow for depth effect */
-  --switch-bg-light: #ffeb3b; /* Background color for light mode switch (sun) */
-  --switch-bg-dark: #37474f; /* Background color for dark mode switch (moon) */
-  --switch-icon-light: #ffffff; /* Icon color for light mode switch (sun) */
-  --switch-icon-dark: #ffeb3b; /* Icon color for dark mode switch (moon) */
+  --toggle-btn-bg-light: #ffeb3b; /* Background color for light mode toggle button (sun) */
+  --toggle-btn-bg-dark: #37474f; /* Background color for dark mode toggle button (moon) */
+  --toggle-icon-light: #ffffff; /* Icon color for light mode toggle button (sun) */
+  --toggle-icon-dark: #ffeb3b; /* Icon color for dark mode toggle button (moon) */
 }
 
-/* Switcher Styles */
-.mode-switcher {
-  display: flex; /* Flexbox for layout */
-  align-items: center; /* Center items vertically */
-  position: absolute; /* Position absolutely */
+/* Toggle Button Styles */
+.mode-toggle {
+  position: absolute; /* Absolute positioning */
   top: 10px; /* Position from the top */
   right: 10px; /* Position from the right */
-  gap: 10px; /* Gap between switch and icons */
 }
 
-.switch {
-  position: relative; /* Relative positioning */
-  display: inline-block; /* Inline block display */
-  width: 60px; /* Width of the switch */
-  height: 34px; /* Height of the switch */
-}
-
-.switch input {
-  opacity: 0; /* Hide the checkbox */
-  width: 0; /* Width of the checkbox */
-  height: 0; /* Height of the checkbox */
-}
-
-.slider {
-  position: absolute; /* Absolute positioning */
-  cursor: pointer; /* Pointer cursor on hover */
-  top: 0; /* Top position */
-  left: 0; /* Left position */
-  right: 0; /* Right position */
-  bottom: 0; /* Bottom position */
+.toggle-btn {
   background-color: var(
-    --switch-bg-light
+    --toggle-btn-bg-light
   ); /* Background color for light mode */
+  border: none; /* Remove default border */
+  border-radius: 50%; /* Make button round */
+  width: 50px; /* Button width */
+  height: 50px; /* Button height */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: var(--shadow); /* Box shadow */
   transition: var(--transition); /* Smooth transition */
-  border-radius: 34px; /* Rounded corners */
 }
 
-.slider:before {
-  position: absolute; /* Absolute positioning */
-  content: ""; /* Content */
-  height: 26px; /* Height of the slider handle */
-  width: 26px; /* Width of the slider handle */
-  left: 4px; /* Left position */
-  bottom: 4px; /* Bottom position */
-  background-color: var(--switch-icon-light); /* Icon color for light mode */
-  transition: var(--transition); /* Smooth transition */
-  border-radius: 50%; /* Rounded corners */
-}
-
-input:checked + .slider {
-  background-color: var(--switch-bg-dark); /* Background color for dark mode */
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px); /* Move the slider handle */
-  background-color: var(--switch-icon-dark); /* Icon color for dark mode */
+body.dark-mode .toggle-btn {
+  background-color: var(
+    --toggle-btn-bg-dark
+  ); /* Background color for dark mode */
 }
 
 .mode-icon {
-  font-size: 24px; /* Font size */
-}
-
-.light-mode-icon {
-  color: var(--switch-bg-light); /* Color for light mode */
-}
-
-.dark-mode-icon {
-  color: var(--switch-bg-dark); /* Color for dark mode */
+  width: 24px; /* Icon width */
+  height: 24px; /* Icon height */
   display: none; /* Initially hidden */
 }
 
-input:checked ~ .light-mode-icon {
-  display: none; /* Hide light mode icon when checked */
+body:not(.dark-mode) .light-mode-icon {
+  display: block; /* Show light mode icon */
 }
 
-input:checked ~ .dark-mode-icon {
-  display: inline-block; /* Show dark mode icon when checked */
+body.dark-mode .dark-mode-icon {
+  display: block; /* Show dark mode icon */
 }
 
 /* Parallax Hero Section */
