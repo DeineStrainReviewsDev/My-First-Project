@@ -97,6 +97,29 @@ input:checked + .slider:before {
   background-color: var(--switch-icon-dark); /* Icon color for dark mode */
 }
 
+.mode-icon {
+  display: inline-block; /* Display as inline block */
+  font-size: 24px; /* Font size */
+  margin-left: 10px; /* Margin to the left */
+}
+
+.light-mode-icon {
+  color: var(--switch-bg-light); /* Color for light mode */
+}
+
+.dark-mode-icon {
+  color: var(--switch-bg-dark); /* Color for dark mode */
+  display: none; /* Initially hidden */
+}
+
+input:checked ~ .light-mode-icon {
+  display: none; /* Hide light mode icon when checked */
+}
+
+input:checked ~ .dark-mode-icon {
+  display: inline-block; /* Show dark mode icon when checked */
+}
+
 /* Parallax Hero Section */
 .hero {
   height: 100vh; /* Full viewport height */
