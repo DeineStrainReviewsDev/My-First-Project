@@ -1,12 +1,15 @@
 /* eslint-disable n/no-unsupported-features/node-builtins */
 
-if (typeof window !== "undefined" && typeof document !== "undefined") {
-  document?.addEventListener("DOMContentLoaded", function () {
-    var toggleButton = document.getElementById("mode-toggle-btn");
-    var body = document.body;
+if (
+  typeof window !== "undefined" &&
+  typeof globalThis.document !== "undefined"
+) {
+  globalThis.document.addEventListener("DOMContentLoaded", function () {
+    var toggleButton = globalThis.document.getElementById("mode-toggle-btn");
+    var body = globalThis.document.body;
 
-    if (window.localStorage) {
-      if (localStorage.getItem("darkMode") === "enabled") {
+    if (typeof window.localStorage !== "undefined") {
+      if (window.localStorage.getItem("darkMode") === "enabled") {
         body.classList.add("dark-mode");
       }
 
@@ -14,9 +17,9 @@ if (typeof window !== "undefined" && typeof document !== "undefined") {
         body.classList.toggle("dark-mode");
 
         if (body.classList.contains("dark-mode")) {
-          localStorage.setItem("darkMode", "enabled");
+          window.localStorage.setItem("darkMode", "enabled");
         } else {
-          localStorage.setItem("darkMode", "disabled");
+          window.localStorage.setItem("darkMode", "disabled");
         }
       });
     }
