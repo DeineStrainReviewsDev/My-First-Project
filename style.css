@@ -44,6 +44,8 @@ body.dark-mode {
 
 /* Switcher Styles */
 .mode-switcher {
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Center items vertically */
   position: absolute; /* Position absolutely */
   top: 10px; /* Position from the top */
   right: 10px; /* Position from the right */
@@ -395,7 +397,7 @@ p {
 
 .scroll-to-top:hover,
 .scroll-to-bottom:hover {
-  background: var(--secondary-color); /* Secondary color */
+  background: var (--secondary-color); /* Secondary color */
   transform: translateY(-3px); /* Slight upward movement */
 }
 
