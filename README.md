@@ -30,11 +30,11 @@ My-First-Project/
 │   ├── container-right-img.webp
 │   └── parallax-bg.webp
 ├── .gitignore               # Excludes node_modules, logs, cache files, and environment configs
-├── README.md                # Explain the Project
+├── README.md                # Project documentation and overview
 ├── index.html               # Main HTML file with structured layout
 ├── mode-switcher.js         # Dark/Light mode toggle logic (localStorage persistence)
 ├── scroll-functions.js      # Smooth scroll functions, scroll-to-top and bottom button visibility
-└── style.css                # Responsive styles with Grid, Flexbox, and custom animations
+└── style.css                 # Responsive styles with Grid, Flexbox, and custom animations
 
 ````
 ## 🔧 Setup
