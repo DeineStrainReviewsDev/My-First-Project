@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) 2025 [DeineStrainReviewsDev](https://github.com/DeineStrainReviewsDev)
+ */
+
 /* eslint-disable n/no-unsupported-features/node-builtins */
 
 if (typeof window !== "undefined") {
