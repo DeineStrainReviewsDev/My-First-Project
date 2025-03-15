@@ -1,14 +1,11 @@
 /* eslint-disable n/no-unsupported-features/node-builtins */
 
-if (
-  typeof window !== "undefined" &&
-  typeof globalThis.document !== "undefined"
-) {
-  globalThis.document.addEventListener("DOMContentLoaded", function () {
-    var toggleButton = globalThis.document.getElementById("mode-toggle-btn");
-    var body = globalThis.document.body;
+if (window && window.document) {
+  document.addEventListener("DOMContentLoaded", function () {
+    var toggleButton = document.getElementById("mode-toggle-btn");
+    var body = document.body;
 
-    if (typeof window.localStorage !== "undefined") {
+    if (window.localStorage) {
       if (window.localStorage.getItem("darkMode") === "enabled") {
         body.classList.add("dark-mode");
       }
