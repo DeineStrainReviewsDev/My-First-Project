@@ -1,74 +1,105 @@
 <!DOCTYPE html>
+<!-- Declares the document type as HTML -->
 <html lang="en">
+  <!-- Sets the language of the document to English -->
   <head>
-    <!-- Character encoding set to UTF-8 for proper text rendering -->
+    <!-- Contains metadata and links for the document -->
     <meta charset="UTF-8" />
-    <!-- Ensures proper scaling and responsiveness on mobile devices -->
+    <!-- Character encoding set to UTF-8 for proper text rendering -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Favicon for the website -->
+    <!-- Ensures proper scaling and responsiveness on mobile devices -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <!-- Title of the webpage -->
+    <!-- Favicon for the website -->
     <title>My Project</title>
-    <!-- Linking the external CSS file for styling -->
+    <!-- Title of the webpage -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Linking the external CSS file for styling -->
   </head>
   <body>
-    <!-- Hero Section: Fullscreen banner with introduction -->
+    <!-- Main content of the document -->
+    <div class="mode-switcher">
+      <!-- Container for the mode switcher -->
+      <input type="checkbox" id="mode-switch" />
+      <!-- Checkbox for toggling modes -->
+      <label for="mode-switch" class="switch">
+        <!-- Label for the checkbox -->
+        <span class="switch-icon switch-icon-light">🌞</span>
+        <!-- Sun icon for light mode -->
+        <span class="switch-icon switch-icon-dark">🌜</span>
+        <!-- Moon icon for dark mode -->
+      </label>
+    </div>
+
     <div class="hero">
+      <!-- Container for the hero section -->
       <div class="hero-content">
+        <!-- Content within the hero section -->
         <h1>Welcome to My Project</h1>
+        <!-- Main heading -->
         <p>Experience a smooth parallax effect with JavaScript scrolling</p>
-        <!-- Button that smoothly scrolls down to the "Explore" section -->
+        <!-- Description paragraph -->
         <a href="#explore" class="btn scroll-link">Explore More</a>
+        <!-- Button that smoothly scrolls down to the "Explore" section -->
       </div>
     </div>
 
-    <!-- Navigation Bar -->
     <div class="navbar">
-      <!-- Sample buttons for navigation or actions -->
+      <!-- Container for the navigation bar -->
       <button class="btn-primary">Test1</button>
+      <!-- Sample button for navigation or actions -->
       <button class="btn-secondary">Test2</button>
+      <!-- Sample button for navigation or actions -->
       <button class="btn-accent">Test3</button>
+      <!-- Sample button for navigation or actions -->
     </div>
 
-    <!-- Main Content Section -->
     <div class="container">
-      <!-- Left Box: Contains a title, text, and an image -->
+      <!-- Container for the main content -->
       <div class="box box-left">
+        <!-- Left container -->
         <h2>Left Container</h2>
+        <!-- Subheading -->
         <p>This is the left container</p>
+        <!-- Description paragraph -->
         <div class="box-image">
+          <!-- Container for the image -->
           <img
             src="img/container-left-img.webp"
             alt="Minimalist workspace setup with laptop, notebook, coffee cup, and plant on a bright desk"
           />
+          <!-- Image source and alternative text -->
         </div>
       </div>
-      <!-- Right Box: Contains a title, text, and an image -->
       <div class="box box-right">
+        <!-- Right container -->
         <h2>Right Container</h2>
+        <!-- Subheading -->
         <p>This is the right container</p>
+        <!-- Description paragraph -->
         <div class="box-image">
+          <!-- Container for the image -->
           <img
             src="img/container-right-img.webp"
             alt="Calm nature landscape with lake, mountains, green hills, and soft daylight clouds"
           />
+          <!-- Image source and alternative text -->
         </div>
       </div>
     </div>
 
-    <!-- Explore Section: Additional content to demonstrate scrolling effect -->
     <section id="explore" class="content">
+      <!-- Section for additional content -->
       <h2>Discover More</h2>
+      <!-- Subheading -->
       <p>
         This section contains more content to demonstrate the scrolling effect.
         Keep scrolling to experience the parallax effect in action.
       </p>
+      <!-- Description paragraph -->
     </section>
 
-    <!-- Scroll-To-Top Button -->
-    <!-- Appears after scrolling and smoothly scrolls back to the top -->
     <button id="scroll-to-top-btn" class="scroll-to-top">
+      <!-- Button to scroll to the top -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
@@ -80,14 +111,14 @@
         stroke-linecap="round"
         stroke-linejoin="round"
       >
-        <!-- Upward pointing arrow icon -->
+        <!-- SVG for upward pointing arrow icon -->
         <polyline points="18 15 12 9 6 15" />
+        <!-- Upward pointing arrow icon -->
       </svg>
     </button>
 
-    <!-- Scroll-To-Bottom Button -->
-    <!-- Always visible (except at the bottom) and smoothly scrolls down -->
     <button id="scroll-to-bottom-btn" class="scroll-to-bottom">
+      <!-- Button to scroll to the bottom -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
@@ -99,12 +130,15 @@
         stroke-linecap="round"
         stroke-linejoin="round"
       >
-        <!-- Downward pointing arrow icon -->
+        <!-- SVG for downward pointing arrow icon -->
         <polyline points="6 9 12 15 18 9" />
+        <!-- Downward pointing arrow icon -->
       </svg>
     </button>
 
-    <!-- Linking external JavaScript file for smooth scrolling functionality -->
     <script src="scroll-functions.js"></script>
+    <!-- Linking external JavaScript file for smooth scrolling functionality -->
+    <script src="mode-switcher.js"></script>
+    <!-- Linking JavaScript for Light/Dark Mode functionality -->
   </body>
 </html>
