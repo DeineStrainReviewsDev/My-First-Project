@@ -11,7 +11,7 @@ if (typeof window !== "undefined" && typeof document !== "undefined") {
         if (targetElement) {
           window.scrollTo({
             top: targetElement.offsetTop,
-            behavior: "smooth",
+            behavior: "smooth"
           });
         }
       });
