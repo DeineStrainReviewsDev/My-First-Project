@@ -1,9 +1,9 @@
 /* eslint-disable n/no-unsupported-features/node-builtins */
 
 if (typeof window !== "undefined" && typeof document !== "undefined") {
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.getElementById("mode-toggle-btn");
-    const body = document.body;
+  document?.addEventListener("DOMContentLoaded", function () {
+    var toggleButton = document.getElementById("mode-toggle-btn");
+    var body = document.body;
 
     if (window.localStorage) {
       if (localStorage.getItem("darkMode") === "enabled") {
