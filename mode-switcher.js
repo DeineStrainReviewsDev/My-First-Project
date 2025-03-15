@@ -1,3 +1,5 @@
+/* eslint-env browser */
+
 document.addEventListener("DOMContentLoaded", function () {
   // Added event listener to ensure DOM is fully loaded before executing script
   const toggleButton = document.getElementById("mode-toggle-btn"); // Selected the mode toggle button element
