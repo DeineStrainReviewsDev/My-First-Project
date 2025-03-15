@@ -307,7 +307,7 @@ p {
 }
 
 /* Mobile Anpassungen */
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .scroll-to-top,
   .scroll-to-bottom {
     width: 45px;
