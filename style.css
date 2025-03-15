@@ -65,7 +65,7 @@ html {
 /* Hero content wrapper with a semi-transparent background */
 .hero-content {
   max-width: 600px; /* Restricts content width for readability */
-  background: rgba(60, 85, 60, 75%); /* Soft earthy green with transparency */
+  background: rgb(60 85 60 / 75%); /* Soft earthy green with transparency */
   backdrop-filter: blur(8px); /* Slight blur effect for better contrast */
   padding: 20px; /* Adds spacing inside the box */
   border-radius: 10px; /* Rounded corners */
