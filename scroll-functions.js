@@ -24,28 +24,59 @@ if (typeof window !== "undefined") {
       });
     });
 
-    // Scroll to Top Button
+    // Scroll to Top & Scroll to Bottom Buttons
     var scrollToTopBtn =
       typeof document !== "undefined"
         ? document.getElementById("scroll-to-top-btn")
         : null;
+    var scrollToBottomBtn =
+      typeof document !== "undefined"
+        ? document.getElementById("scroll-to-bottom-btn")
+        : null;
 
-    if (scrollToTopBtn) {
-      // Button anzeigen/verstecken, wenn gescrollt wird
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 300) {
+    if (scrollToTopBtn && scrollToBottomBtn) {
+      function toggleScrollButtons() {
+        var scrollPosition = window.scrollY;
+        var pageHeight = document.documentElement.scrollHeight;
+        var viewportHeight = window.innerHeight;
+
+        // Scroll-to-Top Button: Erst zeigen, wenn der User einmal gescrollt hat
+        if (scrollPosition > 0) {
           scrollToTopBtn.style.opacity = "1";
           scrollToTopBtn.style.visibility = "visible";
         } else {
           scrollToTopBtn.style.opacity = "0";
           scrollToTopBtn.style.visibility = "hidden";
         }
-      });
 
-      // Beim Klicken auf den Button nach oben scrollen
+        // Scroll-to-Bottom Button: Nur verstecken, wenn der User ganz unten ist
+        if (scrollPosition + viewportHeight >= pageHeight - 10) {
+          scrollToBottomBtn.style.opacity = "0";
+          scrollToBottomBtn.style.visibility = "hidden";
+        } else {
+          scrollToBottomBtn.style.opacity = "1";
+          scrollToBottomBtn.style.visibility = "visible";
+        }
+      }
+
+      // Direkt beim Laden prüfen
+      toggleScrollButtons();
+
+      // Buttons umschalten, wenn gescrollt wird
+      window.addEventListener("scroll", toggleScrollButtons);
+
+      // Beim Klicken auf den Top-Button nach oben scrollen
       scrollToTopBtn.addEventListener("click", function () {
         window.scrollTo({
           top: 0,
+          behavior: "smooth"
+        });
+      });
+
+      // Beim Klicken auf den Bottom-Button nach unten scrollen
+      scrollToBottomBtn.addEventListener("click", function () {
+        window.scrollTo({
+          top: document.body.scrollHeight,
           behavior: "smooth"
         });
       });

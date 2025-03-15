@@ -267,10 +267,10 @@ p {
   animation: fade-in 1.2s ease-out forwards;
 }
 
-/* Scroll to Top Button */
-#scroll-to-top-btn {
+/* Scroll-to-Top & Scroll-to-Bottom Buttons */
+.scroll-to-top,
+.scroll-to-bottom {
   position: fixed;
-  bottom: 20px;
   right: 20px;
   width: 50px;
   height: 50px;
@@ -281,15 +281,48 @@ p {
   box-shadow: var(--shadow);
   font-size: 20px;
   cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
   transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 1;
+  visibility: visible;
 }
 
-#scroll-to-top-btn:hover {
+/* Scroll-to-Top Button (erscheint erst nach dem ersten Scrollen) */
+#scroll-to-top-btn {
+  bottom: 80px; /* Über dem Scroll-to-Bottom Button */
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Scroll-to-Bottom Button (immer sichtbar, außer am Seitenende) */
+#scroll-to-bottom-btn {
+  bottom: 20px;
+}
+
+/* Hover-Effekt für beide Buttons */
+.scroll-to-top:hover,
+.scroll-to-bottom:hover {
   background: var(--secondary-color);
   transform: translateY(-3px);
+}
+
+/* Mobile Anpassungen */
+@media (max-width: 480px) {
+  .scroll-to-top,
+  .scroll-to-bottom {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    right: 15px;
+  }
+
+  #scroll-to-top-btn {
+    bottom: 70px;
+  }
+
+  #scroll-to-bottom-btn {
+    bottom: 15px;
+  }
 }
