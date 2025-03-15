@@ -18,6 +18,7 @@ html {
   --text-color: #2e3d2e; /* Dark green for readable text */
   --light-bg: #eaf5ea; /* Very light green for soft contrast */
   --white: #f8f8f8; /* Soft white for readability */
+  --box-bg-light: #ffffff; /* Light background for boxes */
   --shadow: 0 5px 15px rgb(0 0 0 / 15%); /* Soft shadow for depth effect */
   --border-radius: 8px; /* Rounded corners for a modern look */
   --transition: all 0.3s ease; /* Smooth transitions for hover effects */
@@ -35,11 +36,21 @@ body.dark-mode {
   --text-color: #f1f1f1; /* Light color for readable text */
   --light-bg: #121212; /* Very dark background for soft contrast */
   --white: #2e2e2e; /* Darker background for readability */
+  --box-bg-dark: #2e2e2e; /* Dark background for boxes */
   --shadow: 0 5px 15px rgb(0 0 0 / 50%); /* Darker shadow for depth effect */
   --toggle-btn-bg-light: #ffeb3b; /* Background color for light mode toggle button (sun) */
   --toggle-btn-bg-dark: #37474f; /* Background color for dark mode toggle button (moon) */
   --toggle-icon-light: #ffffff; /* Icon color for light mode toggle button (sun) */
   --toggle-icon-dark: #ffeb3b; /* Icon color for dark mode toggle button (moon) */
+}
+
+/* Body Background */
+body {
+  background-color: var(--light-bg); /* Light mode background */
+}
+
+body.dark-mode {
+  background-color: var(--light-bg); /* Dark mode background */
 }
 
 /* Toggle Button Styles */
@@ -195,7 +206,7 @@ body.dark-mode .navbar {
 
 /* Box Styles */
 .box {
-  background-color: var(--white); /* White background */
+  background-color: var(--box-bg-light); /* Light mode background for boxes */
   padding: 25px; /* Padding inside box */
   border-radius: var(--border-radius); /* Rounded corners */
   box-shadow: var(--shadow); /* Box shadow */
@@ -209,7 +220,7 @@ body.dark-mode .navbar {
 }
 
 body.dark-mode .box {
-  background-color: var(--secondary-color); /* Dark mode background */
+  background-color: var(--box-bg-dark); /* Dark mode background for boxes */
   color: var(--text-color); /* Ensure text color is readable */
 }
 
