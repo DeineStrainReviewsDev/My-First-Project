@@ -6,7 +6,10 @@ if (typeof window !== "undefined" && typeof document !== "undefined") {
       link.addEventListener("click", function (event) {
         event.preventDefault();
         var targetId = this.getAttribute("href").substring(1);
-        var targetElement = globalThis?.document?.getElementById(targetId);
+        var targetElement =
+          typeof document !== "undefined"
+            ? document.getElementById(targetId)
+            : null;
 
         if (targetElement) {
           window.scrollTo({
