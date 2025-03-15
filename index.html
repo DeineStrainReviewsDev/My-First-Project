@@ -1,107 +1,98 @@
 <!DOCTYPE html>
-<!-- Declares the document type as HTML -->
 <html lang="en">
-  <!-- Sets the language of the document to English -->
   <head>
-    <!-- Contains metadata and links for the document -->
     <meta charset="UTF-8" />
-    <!-- Character encoding set to UTF-8 for proper text rendering -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Ensures proper scaling and responsiveness on mobile devices -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <!-- Favicon for the website -->
     <title>My Project</title>
-    <!-- Title of the webpage -->
     <link rel="stylesheet" href="style.css" />
-    <!-- Linking the external CSS file for styling -->
   </head>
   <body>
-    <!-- Main content of the document -->
-    <div class="mode-switcher">
-      <!-- Container for the mode switcher -->
-      <label class="switch">
-        <!-- Label for the switch -->
-        <input type="checkbox" id="mode-switch" />
-        <!-- Checkbox for toggling modes -->
-        <span class="slider round"></span>
-        <!-- Slider element -->
-      </label>
-      <span class="mode-icon light-mode-icon">🌞</span>
-      <!-- Sun icon for light mode -->
-      <span class="mode-icon dark-mode-icon">🌜</span>
-      <!-- Moon icon for dark mode -->
+    <div class="mode-toggle">
+      <!-- Container for the mode toggle button -->
+      <button id="mode-toggle-btn" class="toggle-btn">
+        <!-- Mode toggle button -->
+        <svg
+          class="mode-icon light-mode-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg
+          class="mode-icon dark-mode-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+        </svg>
+      </button>
     </div>
 
     <div class="hero">
-      <!-- Container for the hero section -->
       <div class="hero-content">
-        <!-- Content within the hero section -->
         <h1>Welcome to My Project</h1>
-        <!-- Main heading -->
         <p>Experience a smooth parallax effect with JavaScript scrolling</p>
-        <!-- Description paragraph -->
         <a href="#explore" class="btn scroll-link">Explore More</a>
-        <!-- Button that smoothly scrolls down to the "Explore" section -->
       </div>
     </div>
 
     <div class="navbar">
-      <!-- Container for the navigation bar -->
       <button class="btn-primary">Test1</button>
-      <!-- Sample button for navigation or actions -->
       <button class="btn-secondary">Test2</button>
-      <!-- Sample button for navigation or actions -->
       <button class="btn-accent">Test3</button>
-      <!-- Sample button for navigation or actions -->
     </div>
 
     <div class="container">
-      <!-- Container for the main content -->
       <div class="box box-left">
-        <!-- Left container -->
         <h2>Left Container</h2>
-        <!-- Subheading -->
         <p>This is the left container</p>
-        <!-- Description paragraph -->
         <div class="box-image">
-          <!-- Container for the image -->
           <img
             src="img/container-left-img.webp"
             alt="Minimalist workspace setup with laptop, notebook, coffee cup, and plant on a bright desk"
           />
-          <!-- Image source and alternative text -->
         </div>
       </div>
       <div class="box box-right">
-        <!-- Right container -->
         <h2>Right Container</h2>
-        <!-- Subheading -->
         <p>This is the right container</p>
-        <!-- Description paragraph -->
         <div class="box-image">
-          <!-- Container for the image -->
           <img
             src="img/container-right-img.webp"
             alt="Calm nature landscape with lake, mountains, green hills, and soft daylight clouds"
           />
-          <!-- Image source and alternative text -->
         </div>
       </div>
     </div>
 
     <section id="explore" class="content">
-      <!-- Section for additional content -->
       <h2>Discover More</h2>
-      <!-- Subheading -->
       <p>
         This section contains more content to demonstrate the scrolling effect.
         Keep scrolling to experience the parallax effect in action.
       </p>
-      <!-- Description paragraph -->
     </section>
 
     <button id="scroll-to-top-btn" class="scroll-to-top">
-      <!-- Button to scroll to the top -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
@@ -113,14 +104,11 @@
         stroke-linecap="round"
         stroke-linejoin="round"
       >
-        <!-- SVG for upward pointing arrow icon -->
         <polyline points="18 15 12 9 6 15" />
-        <!-- Upward pointing arrow icon -->
       </svg>
     </button>
 
     <button id="scroll-to-bottom-btn" class="scroll-to-bottom">
-      <!-- Button to scroll to the bottom -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
@@ -132,14 +120,11 @@
         stroke-linecap="round"
         stroke-linejoin="round"
       >
-        <!-- SVG for downward pointing arrow icon -->
         <polyline points="6 9 12 15 18 9" />
-        <!-- Downward pointing arrow icon -->
       </svg>
     </button>
 
     <script src="scroll-functions.js"></script>
-    <!-- Linking external JavaScript file for smooth scrolling functionality -->
     <script src="mode-switcher.js"></script>
     <!-- Linking JavaScript for Light/Dark Mode functionality -->
   </body>

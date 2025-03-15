@@ -49,6 +49,7 @@ body.dark-mode {
   position: absolute; /* Position absolutely */
   top: 10px; /* Position from the top */
   right: 10px; /* Position from the right */
+  gap: 10px; /* Gap between switch and icons */
 }
 
 .switch {
@@ -100,9 +101,7 @@ input:checked + .slider:before {
 }
 
 .mode-icon {
-  display: inline-block; /* Display as inline block */
   font-size: 24px; /* Font size */
-  margin-left: 10px; /* Margin to the left */
 }
 
 .light-mode-icon {
@@ -397,7 +396,7 @@ p {
 
 .scroll-to-top:hover,
 .scroll-to-bottom:hover {
-  background: var (--secondary-color); /* Secondary color */
+  background: var(--secondary-color); /* Secondary color */
   transform: translateY(-3px); /* Slight upward movement */
 }
 
