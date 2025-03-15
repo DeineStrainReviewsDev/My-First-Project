@@ -27,7 +27,7 @@ if (typeof window !== "undefined") {
     // Scroll to Top Button
     var scrollToTopBtn =
       typeof document !== "undefined"
-        ? document.getElementById("scrollToTopBtn")
+        ? document.getElementById("scroll-to-top-btn")
         : null;
 
     if (scrollToTopBtn) {

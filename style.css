@@ -268,7 +268,7 @@ p {
 }
 
 /* Scroll to Top Button */
-#scrollToTopBtn {
+#scroll-to-top-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -289,7 +289,7 @@ p {
   justify-content: center;
 }
 
-#scrollToTopBtn:hover {
+#scroll-to-top-btn:hover {
   background: var(--secondary-color);
   transform: translateY(-3px);
 }
