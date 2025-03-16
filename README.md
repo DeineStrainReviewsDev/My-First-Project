@@ -1,4 +1,13 @@
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/fa5414aff52b44d9a6f5d2f0237de7ee)](https://app.codacy.com/gh/DeineStrainReviewsDev/My-First-Project/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+![Codacy grade](https://img.shields.io/codacy/grade/fa5414aff52b44d9a6f5d2f0237de7ee?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/DeineStrainReviewsDev/My-First-Project?style=for-the-badge)
+![GitHub Created At](https://img.shields.io/github/created-at/DeineStrainReviewsDev/My-First-Project?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/DeineStrainReviewsDev/My-First-Project?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/DeineStrainReviewsDev/My-First-Project?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/DeineStrainReviewsDev/My-First-Project?display_timestamp=author&style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/DeineStrainReviewsDev/My-First-Project?style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/DeineStrainReviewsDev/My-First-Project?style=for-the-badge)
+![GitHub branch check runs](https://img.shields.io/github/check-runs/DeineStrainReviewsDev/My-First-Project/main?style=for-the-badge)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/DeineStrainReviewsDev/My-First-Project?style=for-the-badge)
 
 # My-First-Project
 
