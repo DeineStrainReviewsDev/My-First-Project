@@ -415,3 +415,28 @@ p {
     bottom: 10px; /* Further adjusted bottom position */
   }
 }
+
+/* Footer Styles */
+footer {
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center content */
+  align-items: center; /* Center items vertically */
+  padding: 20px; /* Padding around footer */
+  background-color: var(--white); /* Light background */
+  color: var(--primary-color); /* Primary text color */
+  text-align: center; /* Center text */
+}
+
+body.dark-mode footer {
+  background-color: var(--secondary-color); /* Dark background */
+  color: var(--text-color); /* Light text color */
+}
+
+footer a {
+  color: inherit; /* Inherit text color */
+  text-decoration: none; /* Remove underline */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
