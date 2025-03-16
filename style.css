@@ -66,9 +66,7 @@ body.dark-mode {
 }
 
 .toggle-btn {
-  background-color: var(
-    --toggle-btn-bg-light
-  ); /* Background color for light mode */
+  background-color: var(--toggle-btn-bg-light); /* Background color for light mode */
   border: none; /* Remove default border */
   border-radius: 50%; /* Make button round */
   width: 50px; /* Button width */
@@ -82,9 +80,7 @@ body.dark-mode {
 }
 
 body.dark-mode .toggle-btn {
-  background-color: var(
-    --toggle-btn-bg-dark
-  ); /* Background color for dark mode */
+  background-color: var(--toggle-btn-bg-dark); /* Background color for dark mode */
 }
 
 .mode-icon {
@@ -182,19 +178,6 @@ body.dark-mode .navbar {
 .navbar button:hover {
   background-color: var(--secondary-color); /* Secondary background color */
   transform: translateY(-3px); /* Slight upward movement */
-}
-
-/* Button Color Variants */
-.btn-primary {
-  background-color: var(--primary-color); /* Primary color */
-}
-
-.btn-secondary {
-  background-color: var(--secondary-color); /* Secondary color */
-}
-
-.btn-accent {
-  background-color: var(--accent-color); /* Accent color */
 }
 
 /* Main Content Container */
@@ -332,34 +315,6 @@ p {
   }
 }
 
-/* Fade-in Animations */
-@keyframes fade-in {
-  from {
-    opacity: 0; /* Start fully transparent */
-    transform: translateY(20px); /* Move element downward */
-  }
-  to {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Move to original position */
-  }
-}
-
-.navbar {
-  animation: fade-in 0.6s ease-out forwards; /* Navbar fades in first */
-}
-
-.box-left {
-  animation: fade-in 0.8s ease-out forwards; /* Left box fades in next */
-}
-
-.box-right {
-  animation: fade-in 1s ease-out forwards; /* Right box follows */
-}
-
-.box-image {
-  animation: fade-in 1.2s ease-out forwards; /* Images fade in last */
-}
-
 /* Scroll-to-Top & Scroll-to-Bottom Buttons */
 .scroll-to-top,
 .scroll-to-bottom {
@@ -397,6 +352,34 @@ p {
 .scroll-to-bottom:hover {
   background: var(--secondary-color); /* Secondary color */
   transform: translateY(-3px); /* Slight upward movement */
+}
+
+/* Fade-in Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(20px); /* Move element downward */
+  }
+  to {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+  }
+}
+
+.navbar {
+  animation: fade-in 0.6s ease-out forwards; /* Navbar fades in first */
+}
+
+.box-left {
+  animation: fade-in 0.8s ease-out forwards; /* Left box fades in next */
+}
+
+.box-right {
+  animation: fade-in 1s ease-out forwards; /* Right box follows */
+}
+
+.box-image {
+  animation: fade-in 1.2s ease-out forwards; /* Images fade in last */
 }
 
 /* Mobile Responsiveness (≤ 768px width) */
