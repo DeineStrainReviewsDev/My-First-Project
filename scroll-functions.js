@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) 2025 [DeineStrainReviewsDev](https://github.com/DeineStrainReviewsDev)
+ */
+
 // Ensure the script runs only in a browser environment
 if (typeof window !== "undefined") {
   // Wait until the DOM is fully loaded before executing the script

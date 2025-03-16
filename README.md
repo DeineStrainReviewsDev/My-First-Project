@@ -37,6 +37,10 @@ My-First-Project/
 └── style.css                # Responsive styles with Grid, Flexbox, and custom animations
 
 ````
+## Note about images in the `img` folder
+
+All images located in the [`img`](./img/) folder were generated using [DALL-E](https://openai.com/dall-e) via [ChatGPT (model: GPT-4.5)](https://chat.openai.com/).
+
 ## 🔧 Setup
 
 **1\. Clone the repository:**
@@ -74,6 +78,8 @@ cd My-First-Project
 ## 📜 License
 
 Distributed under the [MIT License](LICENSE).
+
+© 2025 [DeineStrainReviewsDev](https://github.com/DeineStrainReviewsDev)
 
 ## ✍️ Author
 
